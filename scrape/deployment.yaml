@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scrapespider
+  namespace: spider
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: scrapespider
+  template:
+    metadata:
+      labels:
+        app: scrapespider
+    spec:
+      containers:
+        - name: scrapespider
+          image: ccr.ccs.tencentyun.com/white.tie/scrape:2.0
+          ports:
+            - containerPort: 80
