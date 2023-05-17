@@ -2,3 +2,4 @@ scrapy
 aiohttp
 scrapy-redis
 environs
+cs-sender

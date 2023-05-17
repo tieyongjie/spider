@@ -1,3 +1,4 @@
+import os
 import time
 from urllib.parse import urljoin
 
@@ -8,9 +9,10 @@ from ..items import movie
 
 class SsrcrawlSpider(scrapy.Spider):
     name = "ssrcrawl"
-    custom_settings = {
-        "DOWNLOAD_DELAY": 0.5,
-    }
+    custom_settings = dict(
+        DOWNLOAD_DELAY=0.5,
+        LOG_LEVEL=os.environ.get("LOG_LEVEL", "DEBUG"),
+    )
     allowed_domains = []
 
     # start_urls = []

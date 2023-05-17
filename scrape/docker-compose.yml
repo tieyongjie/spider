@@ -1,0 +1,6 @@
+services:
+  scrape:
+    image: ccr.ccs.tencentyun.com/white.tie/scrape:3.0
+    environment:
+      LOG_LEVEL : "DEBUG"
+    command: scrapy crawl ssrcrawl
